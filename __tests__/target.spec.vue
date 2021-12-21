@@ -11,7 +11,7 @@ describe('App', () => {
 
     // findからのtextでタグの中身をとってくる
     const contain = await wrapper.findComponent({ ref: 'title' })
-    console.log('contain内容チェック', contain)
+    // console.log('contain内容チェック', contain)
 
     //タグの中身確認
     // expect(contain).toEqual('ログイン画面')
