@@ -1,37 +1,30 @@
+import { NuxtConfig } from '@nuxt/types'
 
-  import { NuxtConfig } from '@nuxt/types'
+require('dotenv').config()
+let { APIURL } = process.env
+APIURL = APIURL ? APIURL : 'nothing'
 
-  require('dotenv').config()
-  let { APIURL } = process.env
-  APIURL = APIURL ? APIURL : "nothing"
-
-  const config: NuxtConfig =   {
+const config: NuxtConfig = {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'express_front',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'en',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { name: 'format-detection', content: 'telephone=no' },
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-  ],
+  css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    '~/plugins/components.js',
-    '~/plugins/axios-accessor',
-  ],
+  plugins: ['~/plugins/components.js', '~/plugins/axios-accessor'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -41,26 +34,25 @@
     // https://go.nuxtjs.dev/typescript
     '@nuxtjs/eslint-module',
     '@nuxt/typescript-build',
-    '@nuxtjs/vuetify',    
+    '@nuxtjs/vuetify',
   ],
   // serverMiddleware: [
   //   { path: "/server-middleware", handler: '~/plugins/socket.js' }
-  // ],  
+  // ],
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [    
-  ],
+  modules: [],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    transpile: ["three/examples/jsm/controls/OrbitControls"]
+    transpile: ['three/examples/jsm/controls/OrbitControls'],
   },
   env: {
-    APIURL
+    APIURL,
   },
+  target: 'static',
   // publicRuntimeConfig:{
   //   apiURL: process.env.APIURL||''
-  // },  
-  
+  // },
 }
 
 export default config
