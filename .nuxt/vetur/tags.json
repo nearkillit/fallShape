@@ -8,8 +8,8 @@
   "ArtWork": {
     "description": "Auto imported from components/ArtWork/index.vue"
   },
-  "Matter": {
-    "description": "Auto imported from components/Matter/index.vue"
+  "Matters": {
+    "description": "Auto imported from components/Matters/index.vue"
   },
   "CssCommentText": {
     "description": "Auto imported from components/css/CommentText.vue"
@@ -19,5 +19,8 @@
   },
   "ArtWorkJsCopy": {
     "description": "Auto imported from components/ArtWork/js/copy.js"
+  },
+  "MattersJsMatterMethod": {
+    "description": "Auto imported from components/Matters/js/matterMethod.js"
   }
 }
