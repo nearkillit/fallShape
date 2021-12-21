@@ -1,5 +1,10 @@
 
   import { NuxtConfig } from '@nuxt/types'
+
+  require('dotenv').config()
+  let { APIURL } = process.env
+  APIURL = APIURL ? APIURL : "nothing"
+
   const config: NuxtConfig =   {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -24,7 +29,8 @@
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '~/plugins/components.js'
+    '~/plugins/components.js',
+    '~/plugins/axios-accessor',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -46,7 +52,15 @@
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+    transpile: ["three/examples/jsm/controls/OrbitControls"]
+  },
+  env: {
+    APIURL
+  },
+  // publicRuntimeConfig:{
+  //   apiURL: process.env.APIURL||''
+  // },  
+  
 }
 
 export default config

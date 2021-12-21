@@ -25,9 +25,10 @@
     },
     "types": [
       "@nuxt/types",
-      "@types/node"
+      "@types/node",
+      "@types/jest"
     ],
-    "typeRoots": ["/types"],
+    "typeRoots": ["/types"]
   },
   "exclude": [
     "node_modules",
