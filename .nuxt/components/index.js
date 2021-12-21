@@ -1,11 +1,11 @@
-export const Comment = () => import('../../components/Comment.vue' /* webpackChunkName: "components/comment" */).then(c => wrapFunctional(c.default || c))
-export const Nav = () => import('../../components/Nav.vue' /* webpackChunkName: "components/nav" */).then(c => wrapFunctional(c.default || c))
-export const ArtWork = () => import('../../components/ArtWork/index.vue' /* webpackChunkName: "components/art-work" */).then(c => wrapFunctional(c.default || c))
-export const Matters = () => import('../../components/Matters/index.vue' /* webpackChunkName: "components/matters" */).then(c => wrapFunctional(c.default || c))
-export const CssCommentText = () => import('../../components/css/CommentText.vue' /* webpackChunkName: "components/css-comment-text" */).then(c => wrapFunctional(c.default || c))
-export const ArtWorkJsArtworkGL = () => import('../../components/ArtWork/js/ArtworkGL.js' /* webpackChunkName: "components/art-work-js-artwork-g-l" */).then(c => wrapFunctional(c.default || c))
-export const ArtWorkJsCopy = () => import('../../components/ArtWork/js/copy.js' /* webpackChunkName: "components/art-work-js-copy" */).then(c => wrapFunctional(c.default || c))
-export const MattersJsMatterMethod = () => import('../../components/Matters/js/matterMethod.js' /* webpackChunkName: "components/matters-js-matter-method" */).then(c => wrapFunctional(c.default || c))
+export { default as Comment } from '../../components/Comment.vue'
+export { default as Nav } from '../../components/Nav.vue'
+export { default as ArtWork } from '../../components/ArtWork/index.vue'
+export { default as Matters } from '../../components/Matters/index.vue'
+export { default as CssCommentText } from '../../components/css/CommentText.vue'
+export { default as ArtWorkJsArtworkGL } from '../../components/ArtWork/js/ArtworkGL.js'
+export { default as ArtWorkJsCopy } from '../../components/ArtWork/js/copy.js'
+export { default as MattersJsMatterMethod } from '../../components/Matters/js/matterMethod.js'
 
 // nuxt/nuxt.js#8607
 function wrapFunctional(options) {

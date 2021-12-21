@@ -46,6 +46,7 @@ export default {
       randomMathTest: 0,
       fallShape: 0,
       str: false,
+      testURL: 'http://localhost:7000',
     }
   },
   computed: {
@@ -117,14 +118,14 @@ export default {
 
       try {
         // userのput_atの更新
-        await axios.put(`${process.env.APIURL}/`, reqBodyPutAt, {
+        await axios.put(`${this.testURL}/`, reqBodyPutAt, {
           withCredentials: true,
           headers: { 'Content-Type': 'application/json' },
         })
 
         // shapesのuseridの追加
         const { data } = await axios.post(
-          `${process.env.APIURL}/shapes`,
+          `${this.testURL}/shapes`,
           reqBodyShapes,
           {
             withCredentials: true,
@@ -142,7 +143,7 @@ export default {
     async fetchShapes() {
       try {
         // userのput_atの更新
-        const { data } = await axios.get(`${process.env.APIURL}/shapes`, {
+        const { data } = await axios.get(`${this.testURL}/shapes`, {
           withCredentials: true,
           headers: { 'Content-Type': 'application/json' },
         })

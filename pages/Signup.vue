@@ -26,6 +26,7 @@ export default Vue.extend({
       email: '',
       password: '',
       username: '',
+      testURL: 'http://localhost:7000',
     }
   },
   methods: {
@@ -42,14 +43,10 @@ export default Vue.extend({
       }
 
       try {
-        const { data } = await axios.post(
-          `${process.env.APIURL}/signup`,
-          fetchDate,
-          {
-            withCredentials: true,
-            headers: { 'Content-Type': 'application/json' },
-          }
-        )
+        const { data } = await axios.post(`${this.testURL}/signup`, fetchDate, {
+          withCredentials: true,
+          headers: { 'Content-Type': 'application/json' },
+        })
         console.log(data)
         if (data === 'Failure' || data.errors) {
           throw new Error('Failure')

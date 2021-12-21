@@ -17,6 +17,11 @@ import axios from 'axios'
 import { UsersStore, ShapesStore } from '@/store'
 
 export default Vue.extend({
+  data() {
+    return {
+      testURL: 'http://localhost:7000',
+    }
+  },
   computed: {
     userid() {
       return UsersStore.getUsers.id
@@ -41,7 +46,7 @@ export default Vue.extend({
     },
     async logout() {
       try {
-        const { data } = await axios.post(`${process.env.APIURL}/logout`, {
+        const { data } = await axios.post(`${this.testURL}/logout`, {
           withCredentials: true,
           headers: { 'Content-Type': 'application/json' },
         })
