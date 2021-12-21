@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Game",
+    "path": "/Game",
+    "component": "/Users/kiritoshimura/Desktop/express/express_front/pages/Game.vue",
+    "chunkName": "pages/Game"
+  },
+  {
+    "name": "Login",
+    "path": "/Login",
+    "component": "/Users/kiritoshimura/Desktop/express/express_front/pages/Login.vue",
+    "chunkName": "pages/Login"
+  },
+  {
+    "name": "Signup",
+    "path": "/Signup",
+    "component": "/Users/kiritoshimura/Desktop/express/express_front/pages/Signup.vue",
+    "chunkName": "pages/Signup"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/Users/kiritoshimura/Desktop/express/express_front/pages/index.vue",
+    "chunkName": "pages/index"
+  }
+]
