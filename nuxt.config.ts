@@ -49,7 +49,7 @@ const config: NuxtConfig = {
   env: {
     APIURL,
   },
-  target: 'static',
+  // target: 'static',
   // publicRuntimeConfig:{
   //   apiURL: process.env.APIURL||''
   // },
