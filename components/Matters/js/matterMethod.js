@@ -268,7 +268,7 @@ export default class MatterJS {
         y: this.startShape.position.y,
       },
       {
-        x: 0.2,
+        x: 0.1,
         y: 0,
       }
     )

@@ -54,6 +54,7 @@ export default Vue.extend({
         if (data === 'Failure') {
           throw new Error('Failure')
         }
+
         UsersStore.fetch(data)
         this.$router.push('/')
       } catch (err) {

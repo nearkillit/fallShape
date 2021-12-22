@@ -19,7 +19,7 @@ import { UsersStore, ShapesStore } from '@/store'
 export default Vue.extend({
   data() {
     return {
-      testURL: 'http://localhost:7000',
+      // testURL: 'http://localhost:7000',
     }
   },
   computed: {

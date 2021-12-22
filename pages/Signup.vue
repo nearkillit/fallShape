@@ -7,7 +7,7 @@
     <v-card-text>
       <v-text-field v-model="username" label="username" />
       <v-text-field v-model="email" label="email" />
-      <v-text-field v-model="password" label="password" />
+      <v-text-field v-model="password" type="password" label="password" />
     </v-card-text>
     <v-divider></v-divider>
     <v-card-actions>

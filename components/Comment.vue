@@ -18,7 +18,7 @@ export default Vue.extend({
     }
   },
   mounted() {
-    this.socket = io('http://localhost:7000', {
+    this.socket = io(`${process.env.APIURL}`, {
       withCredentials: true,
       extraHeaders: {
         'nuxt-comment': 'abcd',
