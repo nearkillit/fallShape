@@ -46,7 +46,7 @@ export default Vue.extend({
     },
     async logout() {
       try {
-        const { data } = await axios.post(`${this.testURL}/logout`, {
+        const { data } = await axios.post(`${process.env.APIURL}/logout`, {
           withCredentials: true,
           headers: { 'Content-Type': 'application/json' },
         })

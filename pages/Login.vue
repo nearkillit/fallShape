@@ -43,10 +43,14 @@ export default Vue.extend({
         email: this.email,
       }
       try {
-        const { data } = await axios.post(`${this.testURL}/login`, fetchDate, {
-          withCredentials: true,
-          headers: { 'Content-Type': 'application/json' },
-        })
+        const { data } = await axios.post(
+          `${process.env.APIURL}/login`,
+          fetchDate,
+          {
+            withCredentials: true,
+            headers: { 'Content-Type': 'application/json' },
+          }
+        )
         if (data === 'Failure') {
           throw new Error('Failure')
         }

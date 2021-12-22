@@ -311,9 +311,9 @@ export default class MatterJS {
   //  shape_slope: number(0.1~2.0)
   // }
 
-  makeShapeStateRandom(id) {
+  makeShapeStateRandom(id, getToday) {
     let randomSum = 0
-    const today = new Date()
+    const today = getToday
     const ShapeState = {
       name: '',
       width: 0,

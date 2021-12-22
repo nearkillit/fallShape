@@ -46,7 +46,7 @@ export default {
       randomMathTest: 0,
       fallShape: 0,
       str: false,
-      testURL: 'http://localhost:7000',
+      // testURL: 'http://localhost:7000',
     }
   },
   computed: {
@@ -65,7 +65,7 @@ export default {
       if (UsersStore.getUsers.goal_at) {
         return this.dayDiff(UsersStore.getUsers.goal_at)
       } else {
-        return false
+        return true
       }
     },
     goalNumber() {
@@ -73,13 +73,17 @@ export default {
     },
   },
   mounted() {
+    console.log(process.env.APIURL)
     if (!this.MatterJS) {
       this.MatterJS = new MatterJS({
         body: this.$refs.matterCanvas,
       })
       this.MatterJS.readyShape()
       if (this.userid !== 0) {
-        this.getShapeState = this.MatterJS.makeShapeStateRandom(this.userid)
+        this.getShapeState = this.MatterJS.makeShapeStateRandom(
+          this.userid,
+          new Date()
+        )
         this.MatterJS.hasShape(this.getShapeState)
       }
       this.fetchShapes()
@@ -118,14 +122,14 @@ export default {
 
       try {
         // userのput_atの更新
-        await axios.put(`${this.testURL}/`, reqBodyPutAt, {
+        await axios.put(`${process.env.APIURL}/`, reqBodyPutAt, {
           withCredentials: true,
           headers: { 'Content-Type': 'application/json' },
         })
 
         // shapesのuseridの追加
         const { data } = await axios.post(
-          `${this.testURL}/shapes`,
+          `${process.env.APIURL}/shapes`,
           reqBodyShapes,
           {
             withCredentials: true,
@@ -143,7 +147,7 @@ export default {
     async fetchShapes() {
       try {
         // userのput_atの更新
-        const { data } = await axios.get(`${this.testURL}/shapes`, {
+        const { data } = await axios.get(`${process.env.APIURL}/shapes`, {
           withCredentials: true,
           headers: { 'Content-Type': 'application/json' },
         })
@@ -154,8 +158,8 @@ export default {
         const getShapes = (d) => {
           return new Promise((resolve) => {
             const data = d
-            window.setTimeout(() => {
-              const gSS = this.MatterJS.makeShapeStateRandom(data.user_id)
+            window.setTimeout(() => {              
+              const gSS = this.MatterJS.makeShapeStateRandom(data.user_id, new Date(data.updatedAt))
               gSS.x = data.put_x
               gSS.y = 0
               this.MatterJS.makeShape(gSS)
