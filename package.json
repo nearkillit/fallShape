@@ -27,10 +27,7 @@
     "nuxt-socket-io": "^2.0.0",
     "socket.io": "^4.4.0",
     "socket.io-client": "^4.4.0",
-    "three": "^0.135.0",
-    "vue-chat-emoji": "^1.1.27",
-    "vue-eva-input": "^2.0.0",
-    "vue-socket.io": "^3.0.10"
+    "three": "^0.135.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.14.7",
@@ -50,6 +47,6 @@
     "prettier": "^2.3.2",
     "ts-jest": "^27.0.3",
     "vue-jest": "^3.0.7",
-    "vuex-module-decorators": "^2.0.0"
+    "vuex-module-decorators": "2.0.0"
   }
 }
