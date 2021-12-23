@@ -1,4 +1,6 @@
 import { NuxtConfig } from '@nuxt/types'
+import path from 'path'
+import fs from 'fs'
 
 require('dotenv').config()
 let { APIURL } = process.env
@@ -53,6 +55,15 @@ const config: NuxtConfig = {
   // publicRuntimeConfig:{
   //   apiURL: process.env.APIURL||''
   // },
+  server: {
+    port: 3000,
+    host: '0.0.0.0',
+    https: {
+      key: fs.readFileSync(path.resolve(__dirname, 'localhost-key.pem')),
+      cert: fs.readFileSync(path.resolve(__dirname, 'localhost.pem')),
+    },
+    // 以下その他設定...
+  },
 }
 
 export default config

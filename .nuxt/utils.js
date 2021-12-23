@@ -200,7 +200,7 @@ export async function setContext (app, context) {
       payload: context.payload,
       error: context.error,
       base: app.router.options.base,
-      env: {"APIURL":"http://localhost:7000"}
+      env: {"APIURL":"https://fallgameapi.herokuapp.com"}
     }
     // Only set once
 
