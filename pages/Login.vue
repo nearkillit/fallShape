@@ -51,10 +51,10 @@ export default Vue.extend({
             headers: { 'Content-Type': 'application/json' },
           }
         )
+
         if (data === 'Failure') {
           throw new Error('Failure')
         }
-        console.log(data)
 
         UsersStore.fetch(data)
         this.$router.push('/')
