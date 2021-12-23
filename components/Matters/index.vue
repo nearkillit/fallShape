@@ -137,7 +137,6 @@ export default {
           }
         )
         ShapesStore.fetch(data)
-        // put_at だけnew Dateにして、あとは何も変えない
         UsersStore.fetchPutAt(new Date())
       } catch (err) {
         console.log(err)
