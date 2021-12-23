@@ -231,7 +231,7 @@ export default class MatterJS {
     const click = { x: 0, y: this.humanSize.height / 2 }
     // 関係ないところクリックしたら何もさせない
     if (props.x > this.floorSize.width) {
-      return
+      return false
     }
     if (props.x < this.floorSize.wallWidth + props.width / 2) {
       click.x = this.floorSize.wallWidth + props.width / 2
@@ -252,6 +252,8 @@ export default class MatterJS {
     if (props.name === 'trapezoid') this.trapezoid(mS)
     else if (props.name === 'circle') this.circle(mS)
     else if (props.name === 'rectangle') this.rectangle(mS)
+
+    return click
   }
 
   readyShape() {
@@ -296,6 +298,29 @@ export default class MatterJS {
         }
       })
     }
+  }
+
+  getPostion(props) {
+    const click = { x: 0, y: this.humanSize.height / 2 }
+    // 関係ないところクリックしたら何もさせない
+    if (props.x > this.floorSize.width) {
+      return
+    }
+    if (props.x < this.floorSize.wallWidth + props.width / 2) {
+      click.x = this.floorSize.wallWidth + props.width / 2
+    } else if (
+      props.x >
+      this.floorSize.width - this.floorSize.wallWidth - props.width / 2
+    ) {
+      click.x =
+        this.floorSize.width - this.floorSize.wallWidth - props.width / 2
+    } else {
+      click.x = props.x
+    }
+
+    const mS = props
+    mS.x = click.x
+    mS.y = click.y
   }
 
   // 乱数の作成

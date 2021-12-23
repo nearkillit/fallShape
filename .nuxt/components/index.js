@@ -1,7 +1,7 @@
 export { default as Comment } from '../../components/Comment.vue'
 export { default as Nav } from '../../components/Nav.vue'
-export { default as Matters } from '../../components/Matters/index.vue'
 export { default as ArtWork } from '../../components/ArtWork/index.vue'
+export { default as Matters } from '../../components/Matters/index.vue'
 export { default as CssCommentText } from '../../components/css/CommentText.vue'
 export { default as ArtWorkJsArtworkGL } from '../../components/ArtWork/js/ArtworkGL.js'
 export { default as ArtWorkJsCopy } from '../../components/ArtWork/js/copy.js'

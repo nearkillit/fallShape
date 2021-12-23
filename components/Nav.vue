@@ -3,7 +3,7 @@
     <span v-show="userid !== 0" class="font-weight-black">
       ようこそ! {{ username }}さん
     </span>
-    <v-btn text @click="checkstate">CheckState</v-btn>
+    <!-- <v-btn text @click="checkstate">CheckState</v-btn> -->
     <v-btn text @click="game">GAME</v-btn>
     <v-btn text @click="signUp">新規登録</v-btn>
     <v-btn v-if="userid === 0" text @click="login">ログイン</v-btn>
@@ -46,12 +46,11 @@ export default Vue.extend({
     },
     async logout() {
       try {
-        const { data } = await axios.post(`${process.env.APIURL}/logout`, {
+        await axios.post(`${process.env.APIURL}/logout`, {
           withCredentials: true,
           headers: { 'Content-Type': 'application/json' },
         })
         UsersStore.logout()
-        console.log(data)
       } catch (err) {
         alert('ログアウトに失敗しました')
         console.log(err)

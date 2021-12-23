@@ -8,8 +8,8 @@ You can directly use them in pages and other components without the need to impo
 
 - `<Comment>` | `<comment>` (components/Comment.vue)
 - `<Nav>` | `<nav>` (components/Nav.vue)
-- `<Matters>` | `<matters>` (components/Matters/index.vue)
 - `<ArtWork>` | `<art-work>` (components/ArtWork/index.vue)
+- `<Matters>` | `<matters>` (components/Matters/index.vue)
 - `<CssCommentText>` | `<css-comment-text>` (components/css/CommentText.vue)
 - `<ArtWorkJsArtworkGL>` | `<art-work-js-artwork-g-l>` (components/ArtWork/js/ArtworkGL.js)
 - `<ArtWorkJsCopy>` | `<art-work-js-copy>` (components/ArtWork/js/copy.js)

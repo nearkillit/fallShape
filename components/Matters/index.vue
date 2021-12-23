@@ -73,7 +73,7 @@ export default {
     },
   },
   mounted() {
-    console.log(process.env.APIURL)
+    // console.log(process.env.APIURL)
     if (!this.MatterJS) {
       this.MatterJS = new MatterJS({
         body: this.$refs.matterCanvas,
@@ -94,8 +94,8 @@ export default {
       this.getShapeState.x = e.offsetX
       this.getShapeState.y = e.offsetY
       if (this.MatterJS) {
-        this.MatterJS.makeShape(this.getShapeState)
-        this.putatUpdate()
+        const click = this.MatterJS.makeShape(this.getShapeState)
+        click && this.putatUpdate(click)
       }
     },
     start() {
@@ -109,7 +109,8 @@ export default {
     putChange() {
       this.put = !this.put
     },
-    async putatUpdate() {
+    async putatUpdate(click) {
+      console.log(click)
       const reqBodyPutAt = {
         id: this.userid,
         put_at: new Date(),
@@ -117,7 +118,7 @@ export default {
 
       const reqBodyShapes = {
         user_id: this.userid,
-        put_x: this.getShapeState.x,
+        put_x: click.x,
       }
 
       try {
