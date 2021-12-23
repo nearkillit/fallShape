@@ -5,11 +5,11 @@
   "Nav": {
     "description": "Auto imported from components/Nav.vue"
   },
-  "ArtWork": {
-    "description": "Auto imported from components/ArtWork/index.vue"
-  },
   "Matters": {
     "description": "Auto imported from components/Matters/index.vue"
+  },
+  "ArtWork": {
+    "description": "Auto imported from components/ArtWork/index.vue"
   },
   "CssCommentText": {
     "description": "Auto imported from components/css/CommentText.vue"

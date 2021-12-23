@@ -3,28 +3,24 @@
     "name": "Game",
     "path": "/Game",
     "component": "/Users/kiritoshimura/Desktop/express/express_front/pages/Game.vue",
-    "chunkName": "pages/Game",
-    "_name": "_654705f0"
+    "chunkName": "pages/Game"
   },
   {
     "name": "Login",
     "path": "/Login",
     "component": "/Users/kiritoshimura/Desktop/express/express_front/pages/Login.vue",
-    "chunkName": "pages/Login",
-    "_name": "_b7d8fc4a"
+    "chunkName": "pages/Login"
   },
   {
     "name": "Signup",
     "path": "/Signup",
     "component": "/Users/kiritoshimura/Desktop/express/express_front/pages/Signup.vue",
-    "chunkName": "pages/Signup",
-    "_name": "_2ab6a696"
+    "chunkName": "pages/Signup"
   },
   {
     "name": "index",
     "path": "/",
     "component": "/Users/kiritoshimura/Desktop/express/express_front/pages/index.vue",
-    "chunkName": "pages/index",
-    "_name": "_62f9bee4"
+    "chunkName": "pages/index"
   }
 ]

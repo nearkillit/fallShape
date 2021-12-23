@@ -38,10 +38,11 @@ export default Vue.extend({
           name: this.socket.id,
           text: this.comment,
         }
+        console.log(message)
         // イベント元はブロードキャストを受けないので自分でmessageを追加する
         this.comments.push(message.text)
         // send-commentイベントでmessageをサーバーサイドに投げる
-        this.socket.emit('send-comment', message)
+        this.socket.emit('chat message', message.text)
         // my create comment
         this.createComment(this.comment)
         this.comment = ''
