@@ -52,6 +52,8 @@ export default Vue.extend({
           }
         )
 
+        console.log(data)
+
         if (data === 'Failure') {
           throw new Error('Failure')
         }

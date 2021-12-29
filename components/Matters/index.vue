@@ -4,7 +4,7 @@
       <v-btn text disabled>ログインしてください</v-btn>
     </span>
     <span v-else-if="goalIs">
-      <v-btn text @click="start" :disabled="str">start</v-btn>
+      <v-btn text :disabled="str" @click="start">start</v-btn>
       <v-btn text @click="reset">reset</v-btn>
     </span>
     <span v-else-if="!goalIs">
@@ -13,7 +13,9 @@
     <span>あと{{ fallShape }}個落ちてきます</span>
     <span>ゴールした回数 {{ goalNumber }}回</span>
     <div v-if="!put || userid === 0 || !putable" class="blind"></div>
-    <div ref="matterCanvas" @click="makeShape" />
+    <div class="matterCanvasDiv">
+      <canvas ref="matterCanvas" width="1400" height="500" @click="makeShape" />
+    </div>
     <div v-if="userid !== 0" class="haveShape">
       <p>あなたが今日置ける図形</p>
       <div class="shapePostion"></div>
@@ -53,6 +55,9 @@ export default {
     userid() {
       return UsersStore.getUsers.id
     },
+    username() {
+      return UsersStore.getUsers.username
+    },
     putable() {
       if (UsersStore.getUsers.put_at) {
         return this.dayDiff(UsersStore.getUsers.put_at)
@@ -73,7 +78,6 @@ export default {
     },
   },
   mounted() {
-    // console.log(process.env.APIURL)
     if (!this.MatterJS) {
       this.MatterJS = new MatterJS({
         body: this.$refs.matterCanvas,
@@ -89,6 +93,8 @@ export default {
       this.fetchShapes()
     }
   },
+
+  // shapesにuser_nameの追加から！！！！！
   methods: {
     makeShape(e) {
       this.getShapeState.x = e.offsetX
@@ -118,6 +124,7 @@ export default {
 
       const reqBodyShapes = {
         user_id: this.userid,
+        user_name: this.username,
         put_x: click.x,
       }
 
@@ -162,6 +169,8 @@ export default {
               const gSS = this.MatterJS.makeShapeStateRandom(data.user_id, new Date(data.updatedAt))
               gSS.x = data.put_x
               gSS.y = 0
+              gSS.username = data.user_name
+              gSS.updatedAt = data.updatedAt
               this.MatterJS.makeShape(gSS)
               this.fallShape = this.fallShape - 1
               resolve('ok')
@@ -210,6 +219,11 @@ export default {
 .shapePostion {
   height: 140px;
   width: 200px;
+}
+
+.matterCanvasDiv {
+  height: 500px;
+  width: 800px;
 }
 
 .blind {
